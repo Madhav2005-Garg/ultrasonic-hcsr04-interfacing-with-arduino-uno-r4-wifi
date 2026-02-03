@@ -3,8 +3,9 @@
 #define echo_pin 10
 void setup() {
 // write your initialization code here
-    pinmode(echo_pin,INPUT);
-    pinmode(trig_pin,OUTPUT);
+    pinMode(echo_pin,INPUT);
+    pinMode(trig_pin,OUTPUT);
+
 }
 
 void loop() {
@@ -18,8 +19,8 @@ void loop() {
     digitalWrite(trig_pin,LOW);
     long duration=pulseIn(echo_pin,HIGH);
     long distance=0.343*duration/2;
-    serial.print("Distance: ");
-    serial.print(distance);
-    serial.print("  cm");
+    Serial.print("Distance: ");
+    Serial.print(distance);
+    Serial.print("  cm");
     delay(1000);
 }
